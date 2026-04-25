@@ -85,3 +85,22 @@ DELETE FROM Enrollment WHERE EnrollmentID = 3002;
 
 DELETE FROM Student WHERE StudentID = 1;
 -- Retrieval and JOIN queries.
+SELECT * FROM Student ORDER BY LName desc;
+
+SELECT * FROM Course WHERE InstructorID = 1001;
+
+SELECT s.StudentID, s.FName, s.LName, e.CourseID
+FROM Student AS s
+LEFT JOIN Enrollment AS e
+ON s.StudentID = e.StudentID ;
+
+SELECT s.FName, s.LName, e.Grade
+FROM Student AS s
+INNER JOIN Enrollment AS e
+ON s.StudentID = e.StudentID;
+
+SELECT Course.*, COUNT(Enrollment.StudentID) 
+FROM Course
+INNER JOIN Enrollment
+WHERE Course.CourseID = Enrollment.CourseID
+GROUP BY CourseID;
