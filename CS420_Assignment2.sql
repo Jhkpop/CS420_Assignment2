@@ -75,5 +75,13 @@ SELECT * FROM Instructor;
 SELECT * FROM Course;
 SELECT * FROM Enrollment;
 -- Updating and deleting operations.
+UPDATE Student SET major = 'Biology' WHERE StudentID = 5;
 
+UPDATE Enrollment SET Grade = 76 WHERE EnrollmentID = 3005;
+
+UPDATE Course SET InstructorID = 1001 WHERE CourseID = 2000;
+
+DELETE FROM Enrollment WHERE EnrollmentID = 3002;
+
+DELETE FROM Student WHERE StudentID = 1;
 -- Retrieval and JOIN queries.
